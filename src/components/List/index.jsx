@@ -1,5 +1,5 @@
 import { useState } from "react";
-import style from './style.module.css';
+import './style.module.css';
 
 const List = () => {
     const [todo, setTodo] = useState([
@@ -21,15 +21,17 @@ const List = () => {
         {
             "id": 4,
             "title": "Deploy ke Server",
-            "completed": false,
+            "completed": true,
         }
     ]);
+
+   
 
     return ( 
         <div className="list">
             {todo.map((todo) => (
-                <div className="todolist" key={todo.id}>
-                    <h2>{todo.title}</h2>
+                <div className="todolist"  >
+                    <h2 style={{textDecoration: todo.completed ? 'line-through' : 'none'}}>{todo.title}</h2>
                 </div>
             ))}
         </div>
